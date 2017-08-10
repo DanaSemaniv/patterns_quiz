@@ -1,0 +1,120 @@
+{
+  "Factory Method":
+  {
+    "type": "creational",
+    "description": "In the Factory Method, we execute a single function, passing a parameter that provides information about what we want. We are not required to know any details about how the object is implemented and where it is coming from.",
+    "use cases": "If you realize that you cannot track the objects created by your application because the code that creates them is in many different places instead of a single function/method, you should consider using the Factory Method pattern.\nAnother use case worth mentioning is related to improving the performance and memory usage of an application. A Factory Method can improve the performance and memory usage by creating new objects only if it is absolutely necessary."
+  },
+
+  "Abstract Factory":
+  {
+    "type": "creational",
+    "description": "The Abstract Factory design pattern is a generalization of Factory Method. Basically, an Abstract Factory is a (logical) group of Factory Methods, where each Factory Method is responsible for generating a different kind of object",
+    "use cases": "We usually start with the Factory Method which is simpler. If we find out that our application requires many Factory Methods which it makes sense to combine for creating a family of objects, we end up with an Abstract Factory. A benefit of the Abstract Factory that is usually not very visible from a user's point of view when using the Factory Method is that it gives us the ability to modify the behavior of our application dynamically (in runtime) by changing the active Factory Method."
+  },
+
+  "Builder":
+  {
+    "type": "creational",
+    "description": "We use the Builder pattern when we know that an object must be created in multiple steps, and different representations of the same construction are required.",
+    "use cases": "We use the Builder pattern for creating: \n1) an object composed of many parts and created in different steps that might need to follow a specific order;\n2) an object that requires different representations, and we want to keep the construction of an object decoupled from its representation;\n3) an object at one point in time but access it at a later point. These requirements exist in many applications such as page generators, document converters, and User Interface (UI) form creators."
+  },
+
+  "Prototype":
+  {
+    "type": "creational",
+    "description": "Prototype is used for creating exact copies of objects.",
+    "use cases": "The Prototype pattern is useful when we have an existing object and we want to create an exact copy of it. A copy of an object is usually required when we know that parts of the object will be modified but we want to keep the original object untouched. In such cases, it doesn't make sense to recreate the original object from scratch. Another case where Prototype comes in handy is when we want to duplicate a complex object. By duplicating a complex object, we can think of an object that is populated from a database and has references to other objects that are also populated from a database. It is a lot of effort to create an object clone by querying the database(s) multiple times again. Using Prototype for such cases is more convenient."
+  },
+
+  "Adapter":
+  {
+    "type": "structural",
+    "description": "Adapter is a structural design pattern that helps us make two incompatible interfaces compatible.",
+    "use cases": "The Adapter pattern is used for making things work after they have been implemented. Usually one of the two incompatible interfaces is either foreign or old/legacy. If the interface is foreign, it means that we have no access to the source code. If it is old it is usually impractical to refactor it. We can take it even further and argue that altering the implementation of a legacy component to meet our needs is not only impractical, but it also violates the open/close principle "
+  },
+
+  "Decorator":
+  {
+    "type": "structural",
+    "description": "A Decorator pattern can add responsibilities to an object dynamically, and in a transparent manner (without affecting other objects).",
+    "use cases": "The Decorator pattern shines when used for implementing cross-cutting concerns (data validation, transaction processing  caching, logging, monitoring, debugging, business rules, compression, encryption)."
+  },
+
+  "Facade":
+  {
+    "type": "structural",
+    "description": "The Facade design pattern helps us to hide the internal complexity of our systems and expose only what is necessary to the client through a simplified interface",
+    "use cases": "The most usual reason to use the Facade pattern is for providing a single, simple entry point to a complex system. By introducing Facade, the client code can use a system by simply calling a single method/function. At the same time, the internal system does not lose any functionality. It just encapsulates it."
+  },
+
+  "Flyweight":
+  {
+    "type": "structural",
+    "description": "The Flyweight design pattern is a technique used to minimize memory usage and improve performance by introducing data sharing between similar objects",
+    "use cases": "The Gang Of Four (GoF) book lists the following requirements that need to be satisfied to effectively use the Flyweight Pattern:\n1) The application needs to use a large number of objects.\n2) There are so many objects that it's too expensive to store/render them. Once the mutable state is removed, many groups of distinct objects can be replaced by relatively few shared objects.\n3) Object identity is not important for the application. We cannot rely on object identity because object sharing causes identity comparisons to fail."
+  },
+
+  "MVC":
+  {
+    "type": "structural",
+    "description": "MVC is a very important design pattern used to structure an application in three parts: the model, the view, and the controller.",
+    "use cases": "When using MVC, make sure that you creating smart models (core functionality), thin controllers (functionality required for the communication between the view and the controller), and dumb views (representation and minimal processing)."
+  },
+
+  "Proxy":
+  {
+    "type": "structural",
+    "description": "We used the Proxy pattern to implement a surrogate of an actual class when we want to act before (or after) accessing it.",
+    "use cases": "It is used when creating a distributed system using either a private network or the cloud.\nIt is used if our application is suffering from performance issues due to the early creation of expensive objects.\nIt is used to check if a user has sufficient privileges to access a piece of information.\nIt is used when our application (or library, toolkit, framework, and so forth) uses multiple threads and we want to move the burden of thread-safety from the client code to the application.\nAn Object-Relational Mapping (ORM) API is also an example of how to use a remote proxy."
+  },
+
+  "Chain of Responsibility":
+  {
+    "type": "behavioral",
+    "description": "The Chain of Responsibility pattern is used when we want to give a chance to multiple objects to satisfy a single request, or when we don't know which object (from a chain of objects) should process a specific request in advance.",
+    "use cases": "By using the Chain of Responsibility pattern, we give a chance to a number of different objects to satisfy a specific request. This is useful when we don't know which object should satisfy a request in advance.\nAnother case where Chain of Responsibility is useful is when we know that more than one object might need to process a single request."
+  },
+
+  "Command":
+  {
+    "type": "behavioral",
+    "description": "The Command design pattern helps us encapsulate an operation (undo, redo, copy, paste, and so forth) as an object.",
+    "use cases": "GUI buttons and menu items;\nOther operations (cut, copy, paste, redo, and capitalize text);\nTransactional behavior and logging;\nMacros (a sequence of actions that can be recorded and executed on demand at any point in time)."
+  },
+
+  "Interpreter":
+  {
+    "type": "behavioral",
+    "description": "The Interpreter pattern is used to offer a programming-like framework to advanced users and domain experts, but without exposing the complexities of a programming language.",
+    "use cases": "The Interpreter pattern is used when we want to offer a simple language to domain experts and advanced users to solve their problems. The first thing we should stress is that Interpreter should only be used to implement simple languages."
+  },
+
+  "Observer":
+  {
+    "type": "behavioral",
+    "description": "The Observer pattern describes a publish-subscribe relationship between a single object, the publisher, which is also known as the subject or observable, and one or more objects, the subscribers, also known as observers.",
+    "use cases": "We generally use the Observer pattern when we want to inform/update one or more objects (observers/subscribers) about a change that happened to another object (subject/publisher/observable)."
+  },
+
+  "State":
+  {
+    "type": "behavioral",
+    "description": "The State pattern is an implementation of one or more finite-state machines (in short, state machines) used to solve a particular Software Engineering problem.",
+    "use cases": "State machines are used to solve many computational and non-computational problems. Some of them are traffic lights, parking meters, hardware design, programming language parsing, and so forth."
+  },
+
+  "Strategy":
+  {
+    "type": "behavioral",
+    "description": "The Strategy pattern promotes using multiple algorithms to solve a problem, it makes it possible to switch algorithms at runtime transparently",
+    "use cases": "It can be used to create all kinds of different resource filters (authentication, logging, data compression, encryption, and so forth).\nAnother usage of the Strategy pattern is to create different formatting representations, either to achieve portability (for example, line-breaking differences between platforms) or dynamically change the representation of data.\nYet another usage of Strategy worth mentioning is in simulations. If we want, for instance, to simulate robots, we know that some robots are more aggressive than others, some are faster, and so forth."
+  },
+
+  "Template":
+    {
+      "type": "behavioral",
+      "description": "We use Template to eliminate redundant code when implementing algorithms with structural similarities.",
+      "use cases": "Pagination is a good use case to use Template. A pagination algorithm can be split into an abstract (invariant) part and a concrete (variant) part.\nAll application frameworks make use of some form of the Template pattern. When we use a framework to create a graphical application, we usually inherit from a class and implement our custom behavior. However, before this, a Template method is usually called that implements the part of the application that is always the same, which is drawing the screen, handling the event loop, resizing and centralizing the window, and so on."
+    }
+}
