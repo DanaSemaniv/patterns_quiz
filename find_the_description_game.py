@@ -4,20 +4,8 @@ from helpers import (
     check_answer,
     print_question,
     print_result,
+    validate_input,
 )
-
-
-def _validate_input(max_num):
-    while True:
-        try:
-            answer = int(input())
-            if answer > max_num:
-                raise ValueError
-            break
-        except ValueError:
-            print(
-                'Enter number from 1 to {}'.format(max_num))
-    return answer
 
 
 def _get_patterns_for_question(patterns, question_pattern, num_of_answers):
@@ -56,7 +44,7 @@ def find_the_description(patterns, *, num_of_questions=10, num_of_answers=4):
              for name in current_patterns]
         )
 
-        answer = _validate_input(len(current_patterns))
+        answer = validate_input(len(current_patterns))
         answer = patterns[current_patterns[answer - 1]]
 
         result += check_answer(answer['description'],

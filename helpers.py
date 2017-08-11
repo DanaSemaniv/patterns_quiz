@@ -41,3 +41,15 @@ def print_result(right_answers, all_answers):
     else:
         print(colored('You did it!!!', 'green', attrs=attrs))
 
+
+def validate_input(max_num):
+    while True:
+        try:
+            answer = int(input())
+            if answer not in range(1, max_num + 1):
+                raise ValueError
+            break
+        except ValueError:
+            print(
+                'Enter number from 1 to {}'.format(max_num))
+    return answer
