@@ -1,7 +1,17 @@
-from find_the_description_game import find_the_description
-from helpers import get_patterns
+from config import games
+from helpers import get_patterns, validate_input
 
+
+def print_games(games):
+    print('\nEnter the number of game you want to play:\n')
+
+    for game in games:
+        print('Game {}. {}\n'.format(game, games[game].__name__.capitalize()))
 
 if __name__ == '__main__':
     patterns = get_patterns('patterns.json')
-    find_the_description(patterns, num_of_questions=3, num_of_answers=5)
+
+    print_games(games)
+    game = validate_input(len(games))
+
+    games[game](patterns)
